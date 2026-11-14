@@ -1,0 +1,18 @@
+# 依赖与构建产物
+node_modules/
+dist/
+target/
+*.zip
+*.log
+
+# 打包后的便携运行环境（体积过大，自行构建）
+heritage-portable/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# 系统文件
+.DS_Store
+Thumbs.db

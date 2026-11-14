@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: heritage-java-backend
+  data:
+    mongodb:
+      # 本地 MongoDB（默认，直接可用）
+      uri: mongodb://localhost:27017/heritage_db
+      # MongoDB-Atlas 云端连接串（需要时替换上面一行，并删除本行注释）
+      # uri: mongodb+srv://xxx:xxx@cluster0.xxx.mongodb.net/heritage_db
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+jwt:
+  # JWT 签名密钥（代码中会先做 SHA-256 派生，保证满足 HS256 的 256bit 要求）
+  secret: heritage-java-secret-2026
+  # token 有效期：24 小时（毫秒）
+  expire-time: 86400000
+
+logging:
+  level:
+    com.heritage: debug
+    org.springframework.data.mongodb.core.MongoTemplate: debug
